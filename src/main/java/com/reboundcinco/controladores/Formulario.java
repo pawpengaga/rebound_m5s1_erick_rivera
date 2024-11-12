@@ -30,14 +30,16 @@ public class Formulario extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		response.setContentType("text/html");
-		String ruta = request.getContextPath() + request.getServletPath();
-
-		String nombre = request.getParameter("nombre");
+		// RIP LINEA: TRAE LA RUTA PROPIA FORMATEADA SIN IMPORTAR QUE
+		// String ruta = request.getContextPath() + request.getServletPath();
 		
 		PrintWriter salida = response.getWriter();
-		salida.println("<form action='"+ruta+"' method='GET'>");
-		salida.println("<input type=\"text\" name=\"nombre\" placeholder=\"Tu nombre va a aqui\">");
-		salida.println("<button type=\"submit\">Enviar</button>");
+		salida.println("<head>");
+		salida.println("<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\">");
+		salida.println("</head>");
+		salida.println("<form class='d-flex p-5 flex-row w-50 gap-3' action='/rebound_m5s1_erick_rivera/RespuestaFormulario' method='GET'>");
+		salida.println("<input class='form-control col-8' type=\"text\" name=\"nombre\" placeholder=\"Tu nombre va a aqui\">");
+		salida.println("<button class='btn btn-primary col-4' type=\"submit\">Enviar</button>");
 		salida.println("</form>");
 	
 	}
