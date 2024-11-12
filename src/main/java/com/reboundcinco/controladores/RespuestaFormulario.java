@@ -6,46 +6,35 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
- * Servlet implementation class Formulario
+ * Servlet implementation class RespuestaFormulario
  */
-@WebServlet("/Formulario")
-public class Formulario extends HttpServlet {
+@WebServlet("/RespuestaFormulario")
+public class RespuestaFormulario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Formulario() {
+    public RespuestaFormulario() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @param request Una peticion GET simple para el nombre
-	 * @param response El HTML resultante
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		response.setContentType("text/html");
-		String ruta = request.getContextPath() + request.getServletPath();
-
-		String nombre = request.getParameter("nombre");
-		
-		PrintWriter salida = response.getWriter();
-		salida.println("<form action='"+ruta+"' method='GET'>");
-		salida.println("<input type=\"text\" name=\"nombre\" placeholder=\"Tu nombre va a aqui\">");
-		salida.println("<button type=\"submit\">Enviar</button>");
-		salida.println("</form>");
-	
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
